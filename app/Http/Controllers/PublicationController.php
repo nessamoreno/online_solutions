@@ -33,39 +33,44 @@ class PublicationController extends Controller
 
     //Create publication
     public function create(Request $request)
-    {
-        // try {
-        //     $request->validate([
-        //         'title' => 'required|string',
-        //         'description' => 'required|string',
-        //         'imagen' => 'required|string'
-        //     ]);
+    {   
+        $id_user = Auth::user()->id;
+        try {
+            $request->validate([
+                'title' => 'required|string',
+                'description' => 'required|string',
+                'imagen' => 'required|string',
+            ]);
             
-        //     $publication = Publication::create([
-        //         'title' => $request->title,
-        //         'description' => $request->description, 
-        //         'imagen' => $request->imagen,
-        //     ]);
-        //     $publication->id_user = Auth::user()->id;
-        //     $publication->save();
-        //     return redirect()->route('dashboard')->with('success', 'Publication created successfully');
-
-        // } catch (\Exception $e) {
-        //     throw $e;
-        // }
+            $publication = Publication::create([
+                'title' => $request->title,
+                'description' => $request->description, 
+                'imagen' => $request->imagen,
+                'id_user' => $id_user,
+            ]);
+            
+            $publication->save();
+            return redirect()->route('dashboard');
+            
+        } catch (\Exception $e) {
+            throw $e;
+        }
+        //blication = new Publication();
+    //    $publication->title = $request->title;
+    //    $publication->description = $request->description;
+    //    $publication->imagen = $request->imagen;
+    //    $publication->id_user = Auth::user()->id;
+    // //    dd($publication);
+    //    $publication->save();
+    //    return redirect('dashboard');
 
         // dd($request->description);
-       $publication = new Publication();
-       $publication->title = $request->title;
-       $publication->description = $request->description;
-       $publication->imagen = $request->imagen;
-       $publication->id_user = Auth::user()->id;
-       dd($publication->description);
+    //    $pu
+    //    dd($publication->description);
     //    $id = Auth()->User
         // var_dump(Auth::user());
         // dd(Auth::user()->id);
-       $publication->save();
-       return redirect('dashboard');
+      
     }
 
     public function show(): View

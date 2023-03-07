@@ -26,8 +26,8 @@
 
             <div>
               <x-input-label for="photo" :value="__('Foto')" />
-              <x-text-input id="photo" name="photo" type="text" class="mt-1 block w-full" required autofocus autocomplete="photo" />
-              <x-input-error class="mt-2" :messages="$errors->get('photo')" />
+              <x-text-input id="imagen" name="imagen" type="text" class="mt-1 block w-full" required autofocus autocomplete="imagen" />
+              <x-input-error class="mt-2" :messages="$errors->get('imagen')" />
             </div>
 
             <div class="flex items-center gap-4">

@@ -30,7 +30,36 @@
                 </div>
             @endif
             
-            <div class="max-w-7xl mx-auto p-6 lg:p-8">
+                    
+                <div class="py-12">
+                    @foreach ($publications as $publication)
+                    <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+                        <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
+                            <div class="p-6 text-gray-900 dark:text-gray-100">
+                                <section>
+                                    <div>
+                                        <h2>{{$publication -> title}}</h2>
+                                        <p>{{$publication -> created_at}}</p>
+                                    </div>
+                                    <div>
+                                        <h3>{{ $publication -> user -> name }}</h3>
+                                    </div>
+                                    <div>
+                                        <div>{{$publication -> imagen}}</div>
+                                        <div>{{$publication -> description}}</div>
+                                    </div>
+                                    <div>
+                                    <button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
+                                    Button
+                            </button>                                   
+                                    </div>
+                                </section> 
+                            </div>
+                        </div>
+                    </div>
+                    @endforeach   
+                </div> 
+            <!-- <div class="max-w-7xl mx-auto p-6 lg:p-8">
             @foreach ($publications as $publication)
                 <div class="flex justify-center">
                     <div class="mt-16">
@@ -56,7 +85,6 @@
                 </div>      
             </div>
         @endforeach
-        </div>
-        
+        </div> -->   
     </body>
 </html>
