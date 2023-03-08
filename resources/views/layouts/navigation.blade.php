@@ -16,10 +16,10 @@
                         {{ __('Home') }}
                     </x-nav-link>
                     <x-nav-link :href="route('publication.show')" :active="request()->routeIs('publication.show')">
-                        {{ __('My Posts') }}
+                        {{ __('My Publications') }}
                     </x-nav-link>
                     <x-nav-link :href="route('publication.new')" :active="request()->routeIs('publication.new')">
-                        {{ __('My post') }}
+                        {{ __('New publication') }}
                     </x-nav-link>
                 </div>
             </div>

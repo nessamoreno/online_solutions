@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            {{ __('My Posts') }}
+            {{ __('My Publications') }}
         </h2>
     </x-slot>
     @foreach ($publications as $publication)
@@ -21,9 +21,9 @@
                                 <div>{{$publication -> imagen}}</div>
                                 <div>{{$publication -> description}}</div>
                             </div>
-                            <div>
+                            <!-- <div>
                                 <a href="#"><button>Chat</button></a>
-                            </div>
+                            </div> -->
                         </section> 
                     </div>
                 </div>

@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            {{ __('Home') }}
+            {{ __('Publications') }}
         </h2>
     </x-slot>
     @foreach ($publications as $publication)
@@ -21,12 +21,13 @@
                                 <div>{{$publication -> imagen}}</div>
                                 <div>{{$publication -> description}}</div>
                             </div>
-                            <div>
-                                <a href="{{ route('chat.index', ['title' => $publication->title]) }}"><button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
-                                    Button
-                            </button></a>
-                            
-                            </div>
+                            @if ($publication->id_user !== auth()->id())
+                                <div>
+                                    <a href="#">
+                                        <button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">Chat</button>
+                                    </a>
+                                </div>
+                            @endif
                         </section> 
                     </div>
                 </div>

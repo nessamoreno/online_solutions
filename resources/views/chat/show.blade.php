@@ -9,7 +9,10 @@
 <body>
     <section>
         <form action="" method="get">
-            <h3>{{$publication->title}}</h3>
+           <div>
+            <span style="margin-rigth:0px">Hola</span>
+            <span style="margin-left:0px;">¿en que puedo asesorarte?</span>
+           </div>
         </form>
     </section>
 </body>

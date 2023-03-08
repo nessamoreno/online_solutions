@@ -39,7 +39,8 @@ Route::middleware('auth')->group(function () {
 
 
     //Routes chats
-    Route::get('/chats', [ChatController::class,'index'])->name('chat.index');
+    // Route::get('/publications/chat',[ChatController::class,'create'])->name('chat.create');
+    // Route::get('/publications/{publication}/chat/{chat}', [ChatController::class,'show'])->name('chat.show');
 
 });
 
