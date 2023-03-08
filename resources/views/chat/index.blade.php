@@ -7,6 +7,10 @@
     <title>Chat</title>
 </head>
 <body>
-    <h1>Estamos en la vista chat</h1>
+    <section>
+        <form action="" method="get">
+            <h3>{{$publication->title}}</h3>
+        </form>
+    </section>
 </body>
 </html>

@@ -3,7 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PublicationController;
-
+use App\Http\Controllers\ChatController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -32,9 +32,15 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::middleware('auth')->group(function () {
+    //Routes publications
     Route::get('/publications/new', [PublicationController::class, 'new'])->name('publication.new');
     Route::post('/publications',[PublicationController::class,'create'])->name('publication.create');
     Route::get('/publications/myposts',[PublicationController::class,'show'])->name('publication.show');
+
+
+    //Routes chats
+    Route::get('/chats', [ChatController::class,'index'])->name('chat.index');
+
 });
 
 // Route::get('/publications/new', [PublicationController::class,'create']) 

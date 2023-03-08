@@ -22,9 +22,10 @@
                                 <div>{{$publication -> description}}</div>
                             </div>
                             <div>
-                            <button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
+                                <a href="{{ route('chat.index', ['title' => $publication->title]) }}"><button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
                                     Button
-                            </button>
+                            </button></a>
+                            
                             </div>
                         </section> 
                     </div>
