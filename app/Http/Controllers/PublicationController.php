@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Auth;
 
 class PublicationController extends Controller
 {
+    //Cambiar función y utilizar una sola
     public function indexp()
     {
         $info['publications'] = Publication::all();

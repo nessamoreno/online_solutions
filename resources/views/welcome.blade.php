@@ -29,10 +29,9 @@
                     @endauth
                 </div>
             @endif
-            
-                    
+        </div>
+            @foreach ($publications as $publication)
                 <div class="py-12">
-                    @foreach ($publications as $publication)
                     <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                         <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                             <div class="p-6 text-gray-900 dark:text-gray-100">
@@ -48,43 +47,18 @@
                                         <div>{{$publication -> imagen}}</div>
                                         <div>{{$publication -> description}}</div>
                                     </div>
-                                    <div>
-                                    <button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
-                                    Chat
-                            </button>                                   
-                                    </div>
+                                    @if ($publication->id_user !== auth()->id())
+                                        <div>
+                                            <a href="{{ route('dashboard') }}">
+                                                <button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">Chat</button>
+                                            </a>
+                                        </div>
+                                    @endif
                                 </section> 
                             </div>
                         </div>
-                    </div>
-                    @endforeach   
-                </div> 
-            <!-- <div class="max-w-7xl mx-auto p-6 lg:p-8">
-            @foreach ($publications as $publication)
-                <div class="flex justify-center">
-                    <div class="mt-16">
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
-                            <div class="card mb-3" style="max-width: 100%;">
-                                <div class="row no-gutters">
-                                    <div class="col-md-4">
-                                        <img class="img-fluid" src="img/city.jpg">
-                                    </div>
-                                <div class="col-md-8">
-                            <div class="card-body">
-                                <h1 class="card-title">{{$publication -> title}}</h1>
-                                <h5 class="card-title">{{$publication -> user -> name}}</h5>
-                                <p class="card-text">{{$publication -> description}}</p>
-                                <p class="card-text">{{$publication -> imagen}}</p>
-                                <p class="card-text"><small class="text-muted">{{$publication -> created_at}}</small></p>
-                            </div>
-                            <div>
-                                <a href="#"><button>Chat</button></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>      
-            </div>
-        @endforeach
-        </div> -->   
+                    </div>   
+                </div>
+            @endforeach
     </body>
 </html>
