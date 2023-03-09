@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PublicationController;
 use App\Http\Controllers\ChatController;
 use App\Http\Controllers\MessageController;
-
+use App\Models\Chat;
 
 Route::get('/',[PublicationController::class,'indexp']);
 
@@ -32,7 +32,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/publications/chat/show', [ChatController::class,'show'])->name('chat.show');
 
     //Route messages
-    
+    Route::post('/publications/chat/messages',[MessageController::class,'create'])->name('messages.send');
     
 });
 

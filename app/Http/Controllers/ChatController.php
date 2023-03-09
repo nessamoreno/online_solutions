@@ -12,12 +12,13 @@ class ChatController extends Controller
     public function list()
     {
         $id_user_guest = Auth::user()->id;
-        $chat = Chat::where('id_user',$id_user_guest)
+        $chat = Chat::where('id_user_guest',$id_user_guest)
         ->select('u.name','p.*', 'chats.*')
         ->join('publications as p','chats.id_publication', '=','p.id')
         ->join('users as u','p.id_user','=','u.id')
         ->orderByDesc('chats.created_at')
         ->get();
+        
         $info = ['chats' => $chat];
         return view('chat.list', $info);
     }
@@ -28,7 +29,7 @@ class ChatController extends Controller
         $id_chat = $request->id;
         $publication = Publication::where('id_publication',$id_publication);
         $chat = Chat::where('id_chat', $id_chat);
-        return view('chat.show', compact('publication', 'chat'));
+        return view('chat.show', ['publication' => $publication, 'chat' => $chat]);
     }
 
     public function create(Request $request)
@@ -36,7 +37,7 @@ class ChatController extends Controller
         $existingChat = Chat::where('id_publication', $request->id_publication)
                         ->where('id_user_guest', Auth::user()->id)
                         ->first();
-        // dd($existingChat);
+
         if($existingChat){
             return redirect()->route('chat.show', $existingChat);            
         }else{

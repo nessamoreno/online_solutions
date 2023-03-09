@@ -18,4 +18,9 @@ class Chat extends Model
     {
         return $this->belongsTo(Publication::class);
     }
+
+    public function messages()
+    {
+        return $this->hasMany(Message::class);
+    }
 }

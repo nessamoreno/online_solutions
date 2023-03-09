@@ -2,27 +2,20 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Chat;
 use Illuminate\Http\Request;
 use App\Models\Message;
 
 
 class MessageController extends Controller
 {
-    public function create(Request $request)
+    public function create(Request $request,Chat $chat)
     {
-        $request->validate([
-            'date' => ['required'],
-            'message' => ['required'],
-            'id_chat' => ['required']
-        ]);
-
-        $message = Message::create([
-            'date' => $request->date,
-            'message' => $request->message,
-            'id_chat' => $request->id_chat    
-        ]);
-        
+        $message = new Message();
+        $message->id_chat = $chat->id;
+        $message->id_user = auth()->user()->id;
+        $message->message = $request->input('content');
         $message->save();
-        return view('chat.show',$message);
+        return redirect()->route('chat.show' ,$chat->id);
     } 
 }

@@ -12,7 +12,10 @@
                 <div class="p-6 text-gray-900 dark:text-gray-100">
                         <section>
                             <div>
-                                <h3>{{ $publication->user->name }}</h3>
+                                <p class="text-xl">{{$chat->name}}</p>
+                                <p class="text-sm text-slate-400 italic hover:not-italic">{{$chat->title}}</p>
+                                <p class="text-sm text-zinc-900">Último mensage</p>
+                                <p class="text-xs mr-4 ">{{$chat->created_at}}</p>
                             </div>
                         </section> 
                     </div>
