@@ -21,11 +21,11 @@ class Publication extends Model
 
     public function user():belongsTo
     {
-        return $this->belongsTo(User::class, 'id_user');
+        return $this->belongsTo(User::class,'id_user');
     }
 
-    public function user_has_may():HasMany
+    public function chats():HasMany
     {
-        return $this->hasMany(Chat::class,'id');
+        return $this->hasMany(Chat::class,'id_publication');
     }
 }

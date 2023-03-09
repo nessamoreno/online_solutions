@@ -14,8 +14,8 @@ class Chat extends Model
     ];
 
 
-    public function user()
+    public function publication()
     {
-        return $this->belongsTo(Publication::class,'id');
+        return $this->belongsTo(Publication::class);
     }
 }

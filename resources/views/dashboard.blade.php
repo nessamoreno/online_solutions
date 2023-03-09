@@ -15,7 +15,7 @@
                                 <p>{{$publication -> created_at}}</p>
                             </div>
                             <div>
-                                <h3>{{ $publication -> user -> name }}</h3>
+                                <h3>{{ $publication->user->name }}</h3>
                             </div>
                             <div>
                                 <div>{{$publication -> imagen}}</div>

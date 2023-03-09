@@ -19,7 +19,7 @@
               </a>
             </div>
             <div>
-              <h3>Vanessa Moreno</h3>
+              <h3>{{Auth::user()->name}}</h3>
             </div>
             <div>
               <a href="#">

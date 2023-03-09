@@ -12,7 +12,12 @@ class ChatController extends Controller
     public function list()
     {
         $id_user_guest = Auth::user()->id;
-        $chat = Chat::where('id_user_guest',$id_user_guest)->get();
+        $chat = Chat::where('id_user',$id_user_guest)
+        ->select('u.name','p.*', 'chats.*')
+        ->join('publications as p','chats.id_publication', '=','p.id')
+        ->join('users as u','p.id_user','=','u.id')
+        ->orderByDesc('chats.created_at')
+        ->get();
         $info = ['chats' => $chat];
         return view('chat.list', $info);
     }

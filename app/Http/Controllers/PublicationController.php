@@ -1,13 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-// use App\Http\Requests\PublicationCreateRequest;
 use Illuminate\Http\Request;
 use App\Models\Publication;
-use Illuminate\Support\Facades\Redirect;
-use Exception;
 use Illuminate\View\View;
-use Illuminate\Validation\Validator;
 use Illuminate\Support\Facades\Auth;
 
 class PublicationController extends Controller
@@ -22,7 +18,7 @@ class PublicationController extends Controller
     //Index 
     public function index()
     {
-        $info['publications'] = Publication::all();
+        $info ['publications']= Publication::orderByDesc('created_at')->get();
         return view('dashboard', $info);
     }
 
@@ -48,7 +44,6 @@ class PublicationController extends Controller
                 'imagen' => $request->imagen,
                 'id_user' => $id_user,
             ]);
-            
             $publication->save();
             return redirect()->route('dashboard');
             
@@ -60,7 +55,7 @@ class PublicationController extends Controller
     public function show(): View
     {
         $id_user = Auth::user()->id;
-        $publication = Publication::where('id_user',$id_user)->get();
+        $publication = Publication::where('id_user',$id_user)->orderByDesc('created_at')->get();
         $info =['publications' => $publication];
         return view ('publication.show', $info);
     }

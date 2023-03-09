@@ -12,8 +12,7 @@
                 <div class="p-6 text-gray-900 dark:text-gray-100">
                         <section>
                             <div>
-                                <h2>{{$chat->title}}</h2>
-                                <p>{{$chat->name}}</p>
+                                <h3>{{ $publication->user->name }}</h3>
                             </div>
                         </section> 
                     </div>
