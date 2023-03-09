@@ -39,13 +39,12 @@ Route::middleware('auth')->group(function () {
 
 
     //Routes chats
-    // Route::get('/publications/chat',[ChatController::class,'create'])->name('chat.create');
-    // Route::get('/publications/{publication}/chat/{chat}', [ChatController::class,'show'])->name('chat.show');
+    Route::get('/publications/chats',[ChatController::class,'list'])->name('chat.list');
+    Route::get('/publications/{id_publication}/chat/{id_user_guest}', [ChatController::class,'create'])->name('chat.create');
+    Route::get('/publications/chat/show', [ChatController::class,'show'])->name('chat.show');
 
+    // Route::get('/publications/chat/', [ChatController::class,'create'])->name('chat.create');
+    
 });
-
-// Route::get('/publications/new', [PublicationController::class,'create']) 
-//     ->middleware(['auth', 'verified'])
-//     ->name('publication.new');
 
 require __DIR__.'/auth.php';

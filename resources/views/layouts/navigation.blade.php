@@ -21,6 +21,9 @@
                     <x-nav-link :href="route('publication.new')" :active="request()->routeIs('publication.new')">
                         {{ __('New publication') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('chat.list')" :active="request()->routeIs('chat.list')">
+                        {{ __('My Chats') }}
+                    </x-nav-link>
                 </div>
             </div>
 

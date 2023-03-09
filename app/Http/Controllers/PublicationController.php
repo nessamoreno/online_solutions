@@ -1,11 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-
+// use App\Http\Requests\PublicationCreateRequest;
 use Illuminate\Http\Request;
 use App\Models\Publication;
 use Illuminate\Support\Facades\Redirect;
-// use App\Http\Requests\PublicationCreateRequest;
 use Exception;
 use Illuminate\View\View;
 use Illuminate\Validation\Validator;
@@ -55,22 +54,6 @@ class PublicationController extends Controller
         } catch (\Exception $e) {
             throw $e;
         }
-        //blication = new Publication();
-    //    $publication->title = $request->title;
-    //    $publication->description = $request->description;
-    //    $publication->imagen = $request->imagen;
-    //    $publication->id_user = Auth::user()->id;
-    // //    dd($publication);
-    //    $publication->save();
-    //    return redirect('dashboard');
-
-        // dd($request->description);
-    //    $pu
-    //    dd($publication->description);
-    //    $id = Auth()->User
-        // var_dump(Auth::user());
-        // dd(Auth::user()->id);
-      
     }
 
     public function show(): View

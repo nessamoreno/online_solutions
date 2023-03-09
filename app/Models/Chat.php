@@ -12,4 +12,10 @@ class Chat extends Model
     protected $fillable =[
         'id_publication'
     ];
+
+
+    public function user()
+    {
+        return $this->belongsTo(Publication::class,'id');
+    }
 }
