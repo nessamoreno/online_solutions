@@ -8,7 +8,6 @@ use App\Http\Controllers\MessageController;
 use App\Models\Chat;
 
 Route::get('/',[PublicationController::class,'indexp']);
-
 Route::get('/dashboard', [PublicationController::class,'index']) 
     ->middleware(['auth', 'verified'])
     ->name('dashboard');
@@ -33,7 +32,6 @@ Route::middleware('auth')->group(function () {
 
     //Route messages
     Route::post('/publications/chat/messages',[MessageController::class,'create'])->name('messages.create');
-    
 });
 
 require __DIR__.'/auth.php';
