@@ -9,13 +9,27 @@ use App\Models\Message;
 
 class MessageController extends Controller
 {
-    public function create(Request $request,Chat $chat)
-    {
+    public function create(Request $request, Chat $id_chat)
+    {   
+        dd($request->all());
+        // $request->validate([
+        //     'message' => ['required'],
+        //     'id_chat' => ['required'],
+        // ]);
+        
+        // $message = Message::create([
+        //     'message' => $request->message,
+        //     'id_chat' => $id_chat,
+        // ]);
+       
+
+        // $message->save();
         $message = new Message();
-        $message->id_chat = $chat->id;
-        $message->id_user = auth()->user()->id;
-        $message->message = $request->input('content');
+        $message->message = $request->message; 
+        $message->id_chat = $request->id_chat;
+        
         $message->save();
-        return redirect()->route('chat.show' ,$chat->id);
+        return redirect()->route('chat.show', ['id' => $message->id_chat]);
     } 
+
 }

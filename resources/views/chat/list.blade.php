@@ -5,7 +5,7 @@
         </h2>
     </x-slot>
     @foreach ($chats as $chat)
-    <a href="{{ route('chat.show', ['id_publication' => $chat->id_publication, 'id_user_guest' => $chat->id_user_guest]) }}">
+    <a href="{{ route('chat.show', ['id_publication' => $chat->id_publication, 'id_user_guest' => $chat->id_user_guest, 'id_chat' => $chat->id_chat]) }}">
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">

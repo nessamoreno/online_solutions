@@ -30,6 +30,7 @@ class ChatController extends Controller
         $publication = Publication::where('id_publication',$id_publication);
         $chat = Chat::where('id_chat', $id_chat);
         return view('chat.show', ['publication' => $publication, 'chat' => $chat]);
+        
     }
 
     public function create(Request $request)
@@ -47,6 +48,6 @@ class ChatController extends Controller
             $chat->save();
             return view('chat.show', compact('chat'));
         }
-        
+
     }
 }
