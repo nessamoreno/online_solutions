@@ -31,6 +31,3 @@ online solutions is a project where people can register, post, view posts and ch
 
     5. **Perform the migration to the database**
         php artisan migrate
-
-### Lack
-It is necessary to create a function to create messages, organize the main view and implement a publication photo.
