@@ -23,30 +23,34 @@ class ChatController extends Controller
         return view('chat.list', $info);
     }
 
-    public function show(Request $request)
+    public function show($id_publication)
     {
-        $id_publication = $request->id;
-        $id_chat = $request->id;
-        $publication = Publication::where('id_publication',$id_publication);
-        $chat = Chat::where('id_chat', $id_chat);
-        return view('chat.show', ['publication' => $publication, 'chat' => $chat]);
-        
-    }
-
-    public function create(Request $request)
-    {
-        $existingChat = Chat::where('id_publication', $request->id_publication)
+        $existingChat = Chat::where('id_publication', $id_publication)
                         ->where('id_user_guest', Auth::user()->id)
-                        ->first();
+                        ->select('u.name', 'p.*','chats.*')
+                        ->join('publications as p','chats.id_publication', '=', 'p.id')
+                        ->join('users as u','p.id_user', '=' , 'u.id')->first();    
 
         if($existingChat){
-            return redirect()->route('chat.show', $existingChat);            
+            $data = [
+                'id_chat' => $existingChat->id,
+                'id_publication' => $existingChat->id_publication,
+                'id_user_guest' => $existingChat->id_user_guest,
+                'messages' => $existingChat->messages->toArray(),
+                'existingChat' => $existingChat
+            ];
+            return view('chat.show', $data);            
         }else{
             $chat = new Chat();
-            $chat->id_publication = $request->id_publication;
+            $chat->id_publication = $id_publication;
             $chat->id_user_guest = Auth::user()->id;
             $chat->save();
-            return view('chat.show', compact('chat'));
+            $data = [
+                'id_chat' => $chat->id,
+                'id_publication' => $chat->id_publication,
+                'id_user_guest' => $chat->id_user_guest
+            ];
+            return view('chat.show', $data);
         }
 
     }

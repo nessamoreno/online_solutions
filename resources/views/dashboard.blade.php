@@ -18,12 +18,15 @@
                                 <h3>{{ $publication->user->name }}</h3>
                             </div>
                             <div>
-                                <div>{{$publication -> imagen}}</div>
+                                <div>
+                                    <img src="{{ url('public/images/image_publication') }}" alt="image_publication">
+                                    {{$publication -> imagen}}
+                                </div>
                                 <div>{{$publication -> description}}</div>
                             </div>
                             @if ($publication->id_user !== auth()->id())
                                 <div>
-                                    <a href="{{ route('chat.create', ['id_publication' => $publication->id, 'id_user_guest' => auth()->id()] ) }}">
+                                    <a href="{{ route('chat.show', ['id_publication' => $publication->id] ) }}">
                                         <button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">Chat</button>
                                     </a>
                                 </div>

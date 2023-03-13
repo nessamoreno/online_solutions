@@ -28,10 +28,10 @@ Route::middleware('auth')->group(function () {
     //Routes chats
     Route::get('/publications/chats',[ChatController::class,'list'])->name('chat.list');
     Route::get('/publications/{id_publication}/chat/{id_user_guest}', [ChatController::class,'create'])->name('chat.create');
-    Route::get('/publications/chat/show/id_chat', [ChatController::class,'show'])->name('chat.show');
+    Route::get('/publications/chat/show/{id_publication}', [ChatController::class,'show'])->name('chat.show');
 
     //Route messages
-    Route::post('/publications/chat/messages',[MessageController::class,'create'])->name('messages.create');
+    Route::post('/publications/{id_publication}/chat/{id_chat}/messages',[MessageController::class,'create'])->name('messages.create');
 });
 
 require __DIR__.'/auth.php';
