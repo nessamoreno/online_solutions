@@ -23,7 +23,7 @@ En resumen, "Online Solutions" es un proyecto de Laravel que ofrece a los usuari
     laravel v10
 
 ### Clone the repository
-    GitHub: https://github.com/nessamoreno/online_solutions.git
+##### GitHub: https://github.com/nessamoreno/online_solutions.git
 
 
 ### 1. **Install npm packages**
