@@ -7,20 +7,15 @@
 </p>
 
 ## About Online Solutions
-    "Online Solutions" es un proyecto desarrollado con Laravel, que permite a las personas registrarse, publicar contenido,
-    ver publicaciones y chatear. Gracias a la versatilidad y eficiencia de Laravel, este proyecto fue creado de manera efectiva, 
-    brindando una experiencia de usuario amigable y de alta calidad.
+"Online Solutions" es un proyecto desarrollado con Laravel, que permite a las personas registrarse, publicar contenido, ver publicaciones y chatear. Gracias a la versatilidad y eficiencia de Laravel, este proyecto fue creado de manera efectiva, brindando una experiencia de usuario amigable y de alta calidad.
 
-    En "Online Solutions", los usuarios pueden registrarse y crear una cuenta personalizada, lo que les permite publicar su contenido 
-    y compartirlo con otros usuarios. Además, los usuarios pueden visualizar las publicaciones de otros miembros, ofreciendo 
-    una amplia variedad de contenido para disfrutar.
+En "Online Solutions", los usuarios pueden registrarse y crear una cuenta personalizada, lo que les permite publicar su contenido 
+y compartirlo con otros usuarios. Además, los usuarios pueden visualizar las publicaciones de otros miembros, ofreciendo 
+una amplia variedad de contenido para disfrutar.
 
-    Adicionalmente, el proyecto cuenta con una función de chat, que permite a los usuarios comunicarse y conectarse en tiempo real, 
-    fomentando la colaboración y la interacción social en línea.
+Adicionalmente, el proyecto cuenta con una función de chat, que permite a los usuarios comunicarse y conectarse en tiempo real, fomentando la colaboración y la interacción social en línea.
 
-    En resumen, "Online Solutions" es un proyecto de Laravel que ofrece a los usuarios la posibilidad de registrar, publicar, 
-    visualizar y chatear, todo en un mismo lugar. Gracias a Laravel, este proyecto fue desarrollado de manera eficiente y 
-    efectiva, garantizando una experiencia de usuario satisfactoria y amigable.
+En resumen, "Online Solutions" es un proyecto de Laravel que ofrece a los usuarios la posibilidad de registrar, publicar, visualizar y chatear, todo en un mismo lugar. Gracias a Laravel, este proyecto fue desarrollado de manera eficiente y efectiva, garantizando una experiencia de usuario satisfactoria y amigable.
 
 ### Requisitos
     node v16.18.0
@@ -32,18 +27,17 @@
 
 
 ### 1. **Install npm packages**
-    npm install
+npm install
 
 ### 2. **Start the server**
-    npm run dev
+npm run dev
 
 ### 3. **Verify the deployment by navigation**
-        http://solucionesonline.test
+http://solucionesonline.test
 
 ### 4. **Modify env file for database connection**
-    Create an .env file in Laravel, you must copy the content of the .env.example file and modify the name of the database and the password 
-    (if you have one) with the corresponding values. This file is crucial for the configuration of the application and must be carefully 
-    reviewed before running the application.
+Create an ***.env*** file in Laravel, you must copy the content of the ***.env.example*** file and modify the name of the database and the password (if you have one) with the corresponding values. This file is crucial for the configuration of the application and must be carefully 
+reviewed before running the application.
 
 ### 5. **Perform the migration to the database**
-        php artisan migrate
+php artisan migrate
