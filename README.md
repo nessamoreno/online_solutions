@@ -27,19 +27,18 @@ En resumen, "Online Solutions" es un proyecto de Laravel que ofrece a los usuari
 
 
 ### 1. **Install npm packages**
-npm install
+##### npm install
 
 ### 2. **Start the server**
-npm run dev
+##### npm run dev
 
 ### 3. **Verify the deployment by navigation**
-http://solucionesonline.test
+##### http://solucionesonline.test
 
 ### 4. **Modify env file for database connection**
-Create an ***.env*** file in Laravel, you must copy the content of the ***.env.example*** file and modify the name of the database and the password (if you have one) with the corresponding values. This file is crucial for the configuration of the application and must be carefully 
-reviewed before running the application.
+##### Create an ***.env*** file in Laravel, you must copy the content of the ***.env.example*** file and modify the name of the database and the password (if you have one) with the corresponding values. This file is crucial for the configuration of the application and must be carefully reviewed before running the application.
 
 ### 5. **Perform the migration to the database**
-php artisan migrate
+##### php artisan migrate
 
 ### Uncompleted project
